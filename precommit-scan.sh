@@ -8,4 +8,15 @@ show_help() {
     echo " -v Verbose mode" 
 }
 
-show_help
+VERBOSE=false 
+
+
+while getopts ":hv" opt; do
+   case ${opt} in 
+     h ) show_help; exit 0 ;;
+     v ) VERBOSE=true ;;
+     \? ) echo "Invalid option"; show_help; exit 1 ;;
+    esac
+done
+
+
