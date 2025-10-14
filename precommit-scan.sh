@@ -20,3 +20,12 @@ while getopts ":hv" opt; do
 done
 
 echo -e "Scanning staged files for API keys"
+
+
+files=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$files" ]; then 
+   echo "No files staged"
+   exit 0
+fi
+
