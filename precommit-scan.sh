@@ -19,4 +19,4 @@ while getopts ":hv" opt; do
     esac
 done
 
-
+echo -e "Scanning staged files for API keys"
