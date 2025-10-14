@@ -29,3 +29,28 @@ if [ -z "$files" ]; then
    exit 0
 fi
 
+found=false
+
+#Regex for api key
+patterns=(
+    "[A-Za-z0-9_]{20,}"
+)
+
+for file in $files; do 
+  ["$VERBOSE" = true ] && echo " Checking $file"
+   for pattern in "$pattern" "$file"; do
+   if grep -Eq "$pattern" "$file"; then 
+     echo -e "$ Possible secret detected in $file"
+     echo "Pattern match : $patterns"
+     found=true
+    fi
+   done
+done
+
+if [ "$found" = true ]; then 
+   echo -e "Please remove sensitive data before commiting"
+   exit 1
+else 
+  echo -e "No secrets found"
+  exit 0
+fi
