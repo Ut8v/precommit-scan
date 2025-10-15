@@ -19,7 +19,7 @@ The script scans **staged files** for strings matching the pattern `[A-Za-z0-9_]
 
 ---
 
-### [ ] Create a Test File
+### [] Create a Test File
 
 Create a simple text file that includes a fake API key-like string.
 
@@ -29,7 +29,7 @@ cat test.txt
 ```
 ---
 
-### [ ] Stage the File
+### [] Stage the File
 
 Since the script scans staged files, add the file to Git staging:
 
@@ -38,7 +38,7 @@ git add test.txt
 ```
 ---
 
-### [ ] Run the Script
+### [] Run the Script
 
 Run the script directly to test it:
 
